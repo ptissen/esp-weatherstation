@@ -24,11 +24,11 @@
 #include "locale/locale_de.h"
 
 #include "../lib/GxEPD2/GxEPD2_display_selection_new_style.h"
+#include "../gfx-fonts/include/fonts.h"
 
 #include "globalvar.h"
 #include "helper.h"
 #include "helper_conversions.h"
-#include "helper_fonts.h"
 #include "helper_icons.h"
 #include "locale/locale_de.h"
 #include "logging.h"
