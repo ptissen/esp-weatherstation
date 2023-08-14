@@ -15,51 +15,51 @@
  *   along with this program.  If not, see <https://www.gnu.org/licenses/>.
  */
 
-#include "battery.h"
+#include "UPesyBattery.h"
 
 #include "config/config.h"
 #include "config/secrets.h"
 #include "logging.h"
 
-void Battery::ini(void){
-    pinMode(BATTERY_PIN_ADC, INPUT);
+void UPesyBattery::ini(void){
+    pinMode(UPesyBattery_PIN_ADC, INPUT);
 }
 
-void Battery::update(void){
-    logI.println("\n------------ Battery ------------");
+void UPesyBattery::update(void){
+    logI.println("\n------------ UPesyBattery ------------");
 
-    // Average the battery voltage over multiple analog values for bestter results
+    // Average the UPesyBattery voltage over multiple analog values for bestter results
     long sum = 0;
-    for (int i = 0; i < BATTERY_READ_COUNT; i++)
+    for (int i = 0; i < UPesyBattery_READ_COUNT; i++)
     {
-        sum += analogRead(BATTERY_PIN_ADC);
+        sum += analogRead(UPesyBattery_PIN_ADC);
         delayMicroseconds(10);
     }
 
     // Calculate AnalogValue
-    m_voltage = sum / (float) BATTERY_READ_COUNT;
+    m_voltage = sum / (float) UPesyBattery_READ_COUNT;
 
     // Calculate the voltage
     m_voltage = 1.435 * (m_voltage / 4095.0) * 3.3;
     logD.println(" Voltage      : " + String(m_voltage));
 
     // Calculate the percentage
-    m_percent = (int)round(((m_voltage - BATTERY_VMIN) / (BATTERY_VMAX - BATTERY_VMIN)) * 100);
+    m_percent = (int)round(((m_voltage - UPesyBattery_VMIN) / (UPesyBattery_VMAX - UPesyBattery_VMIN)) * 100);
     m_percent = max(0, min(100, m_percent));
-    m_isBatteryLow = m_voltage <= BATTERY_VOLTAGE_LOW;
+    m_isUPesyBatteryLow = m_voltage <= UPesyBattery_VOLTAGE_LOW;
 
     logD.println(" Percentage   : " + String(m_percent));
-    logD.println(" isLow ?      : " + String(m_isBatteryLow));
+    logD.println(" isLow ?      : " + String(m_isUPesyBatteryLow));
 
-    // Check Memory for last state of Battery
-    myPrefs.begin(PREFS_WAS_BATTERY_LOW, false);
-    m_wasBatteryLow = myPrefs.getBool(PREFS_WAS_BATTERY_LOW, false);
-    logD.println(" wasLow       : " + String(m_wasBatteryLow));
-    if (m_isBatteryLow && !m_wasBatteryLow) {
-        myPrefs.putBool(PREFS_WAS_BATTERY_LOW, true);
+    // Check Memory for last state of UPesyBattery
+    myPrefs.begin(PREFS_WAS_UPesyBattery_LOW, false);
+    m_wasUPesyBatteryLow = myPrefs.getBool(PREFS_WAS_UPesyBattery_LOW, false);
+    logD.println(" wasLow       : " + String(m_wasUPesyBatteryLow));
+    if (m_isUPesyBatteryLow && !m_wasUPesyBatteryLow) {
+        myPrefs.putBool(PREFS_WAS_UPesyBattery_LOW, true);
     }
-    if (!m_isBatteryLow && m_wasBatteryLow) {
-        myPrefs.putBool(PREFS_WAS_BATTERY_LOW, false);
+    if (!m_isUPesyBatteryLow && m_wasUPesyBatteryLow) {
+        myPrefs.putBool(PREFS_WAS_UPesyBattery_LOW, false);
     }
     myPrefs.end();
 }

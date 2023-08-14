@@ -16,27 +16,14 @@
  */
 
 #pragma once
-
-#include <math.h>
-#include <Preferences.h>
 #include <Arduino.h>
 
 class Battery {
 public:
-  Battery() = default;
-
-  void ini(void);
-  void update(void);
-
-  int percent() const { return m_percent; }
-  float voltage() const { return m_voltage; }
-  bool isBatteryLow() const { return m_isBatteryLow; }
-  bool wasBatteryLow() const { return m_wasBatteryLow; }
-
-private:
-  float m_voltage = 0.0;
-  int m_percent = 0; 
-  bool m_isBatteryLow = false;
-  bool m_wasBatteryLow = false;
-  Preferences myPrefs;
+    virtual void init() = 0;
+    virtual void update() = 0;
+    virtual int percent() const = 0;
+    virtual float voltage() const = 0;
+    virtual bool isBatteryLow() const = 0;
+    virtual bool wasBatteryLow() const = 0;
 };
