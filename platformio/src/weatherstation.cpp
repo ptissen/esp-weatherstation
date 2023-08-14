@@ -32,7 +32,7 @@ void WeatherStation::ini(){
     }
    
     // Battery
-    m_battery.ini();
+    m_battery.init();
     m_battery.update();
     if(m_battery.isBatteryLow() == true) {
         if(m_battery.wasBatteryLow() == false){

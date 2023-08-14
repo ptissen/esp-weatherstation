@@ -19,22 +19,24 @@
 #include <Arduino.h>
 #include <Preferences.h>
 
+#include "battery.h"
+
 // --------------------------------------------------------------------------
 // --- Battery ---
-#define BATTERY_PIN_ADC                 35
-#define PREFS_WAS_BATTERY_LOW           "b1"
-#define BATTERY_READ_COUNT              10
-#define BATTERY_VOLTAGE_LOW             3.0
-#define BATTERY_VMIN                    3.4
-#define BATTERY_VMAX                    4.2
+#define UPESY_BATTERY_PIN_ADC                 35
+#define UPESY_PREFS_WAS_BATTERY_LOW           "b1"
+#define UPESY_BATTERY_READ_COUNT              10
+#define UPESY_BATTERY_VOLTAGE_LOW             3.0
+#define UPESY_BATTERY_VMIN                    3.4
+#define UPESY_BATTERY_VMAX                    4.2
 // --------------------------------------------------------------------------
 
 class UPesyBattery : public Battery {
 public:
     UPesyBattery() = default;
 
-    void init() override;
-    void update() override;
+    void init() override ;
+    void update() override ;
 
     int percent() const override { return m_percent; }
     float voltage() const override { return m_voltage; }

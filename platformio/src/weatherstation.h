@@ -20,7 +20,7 @@
 #include <Arduino.h>
 #include <WiFi.h>
 
-#include "battery.h"
+#include "battery/upesybattery.h"
 #include "wifihandler.h"
 #include "timehandler.h"
 #include "openweathermap.h"
@@ -39,8 +39,7 @@ private:
     void activateDeepSleep(bool forever, TimeHandler &t);
 
     OpenWeatherMap m_owm;
-    
-    Battery m_battery;
+    UPesyBattery m_battery;
     WifiHandler m_wifiHandler;
     TimeHandler m_timeHandler;
     DisplayHandler m_displayHandler;
