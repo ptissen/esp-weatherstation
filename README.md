@@ -8,6 +8,10 @@
 
 This is just another Weatherstation that is using an ESP32 as a central unit, an e-paper and the OpenWeatherMap Service to try to create the perfect Weatherstation :).
 
+__Why another ESP WeatherStation ?__
+
+The interesting projects I came across during my research typically utilize the OneCall API from OpenWeatherMap. However, using this API requires an account with credit card information. In contrast, for this particular project, no credit card information is necessary.
+
 Table of Context:
 
 [[_TOC_]]
@@ -133,7 +137,7 @@ This Project is inspired by the Project esp-weather-epd ([Github-link](https://g
 Furthermore, it was created as part of a course at our university. Many thanks to our supervisor Carl, who had the idea for this project and supported us very much.
 
 # Version
-See file [Changelog](Changelog)
+See file [Changelog](Changelog.md)
 
 # Licensing
 See file [LICENSE](LICENSE)
