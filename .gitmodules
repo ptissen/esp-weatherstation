@@ -1,3 +1,4 @@
 [submodule "platformio/gfx-fonts"]
 	path = platformio/gfx-fonts
 	url = git@gitlab.com:tissen-esp/gfx-fonts.git
+	branch = main
