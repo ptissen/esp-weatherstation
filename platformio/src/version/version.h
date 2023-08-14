@@ -20,6 +20,6 @@
 
 #include <Arduino.h>
 
-#define VERSION_INFO   "v0.9"
+#define VERSION_INFO   "v0.0"
 #define VERSION_AUTHOR "VERSION_AUTHOR"
 #define VERSION_DATE   "VERSION_DATE"

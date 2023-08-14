@@ -71,10 +71,12 @@ void WeatherStation::ini(){
         return;
     }
 
-    MQTTHandler m_mqtt(m_client);
-    m_mqtt.setup();
-    m_mqtt.publish(MQTT_TOP_BATTERY,String(m_battery.percent()).c_str());
-    m_wifiHandler.kill();
+    #if (USE_MQTT == true)
+        MQTTHandler m_mqtt(m_client);
+        m_mqtt.setup();
+        m_mqtt.publish(MQTT_TOP_BATTERY,String(m_battery.percent()).c_str());
+        m_wifiHandler.kill();
+    #endif
 
     GL_BAT_PERCENTAGE = m_battery.percent();
     GL_BAT_VOLTAGE = m_battery.voltage();

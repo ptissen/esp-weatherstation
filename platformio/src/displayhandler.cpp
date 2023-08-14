@@ -415,7 +415,7 @@ void DisplayHandler::drawForecastGraph(const OpenWeatherMap::owm_5_days_forecast
         display.setFont(&FONT_16px);
         if(i == 0)
             drawText(tx, y2 - pxC - 16, temp, ALIGN_LB);
-        else if ( i+4 >= dataCount )
+        else if ( i >= dataCount - 1 )
             drawText(tx, y2 - pxC - 16, temp, ALIGN_RB);
         else
             drawText(tx, y2 - pxC - 16, temp, ALIGN_CB);
@@ -445,8 +445,8 @@ void DisplayHandler::drawForecastGraph(const OpenWeatherMap::owm_5_days_forecast
         drawText(x1 + xLegend / 2, ty + 6, str, ALIGN_CB);
 
         // Legend Rain
-        //  str = String(i * 20) + "%";
-        //  drawText(x3 + xLegend / 2, ty + 6, str, ALIGN_CB);
+        str = String(i * 20) + "%";
+        drawText(x3 + xLegend / 2, ty + 6, str, ALIGN_CB);
         
         ty -= yDataStepPx;
     }
@@ -464,6 +464,27 @@ void DisplayHandler::drawForecastGraph(const OpenWeatherMap::owm_5_days_forecast
         display.drawLine(txl    , y2 - pxL    , txr    , y2 - pxC    , GxEPD_BLACK);
         display.drawLine(txl    , y2 - pxL + 1, txr    , y2 - pxC + 1, GxEPD_BLACK);
         display.drawLine(txl - 1, y2 - pxL    , txr - 1, y2 - pxC    , GxEPD_BLACK);
+    }
+
+    // Draw Rain probability as a dotet rectangle
+    for (int16_t i = 0; i < dataCount; ++i)
+    {
+        float pxH =  round((owm.list[i].pop) * ySizePx);
+
+        txl = x2 + i * xDataStep - (xDataStep / 2);
+        txr = x2 + i * xDataStep + (xDataStep / 2);
+
+        if(i == 0)
+            txl = x2 + i * xDataStep;
+        else if ( i >= dataCount - 1)
+            txr = x2 + i * xDataStep;
+
+        // Drotted rectangle
+        for (int16_t x = txl; x <= txr; x += 3) {
+            for(int16_t y = y2 - pxH; y <= y2; y += 3) {
+                display.drawPixel(x, y, GxEPD_BLACK);
+            }
+        }
     }
 }
 
