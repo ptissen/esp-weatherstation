@@ -1,0 +1,29 @@
+<svg width="256" height="256" xmlns="http://www.w3.org/2000/svg">
+ <defs>
+  <filter height="200%" width="200%" y="-50%" x="-50%" id="svg_24_blur">
+   <feGaussianBlur stdDeviation="0" in="SourceGraphic"/>
+  </filter>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <rect stroke="#000000" stroke-width="10" rx="10" id="svg_3" height="165.34967" width="239" y="45.32516" x="10" fill="#ffffff"/>
+  <ellipse stroke="#000000" ry="30" rx="30" id="svg_25" cy="118.10348" cx="101.05126" stroke-width="6" fill="#ffffff"/>
+  <ellipse stroke="#000000" ry="20.37925" rx="26.6021" id="svg_5" cy="150.41105" cx="122.67736" stroke-width="6" fill="#fff"/>
+  <ellipse stroke="#000000" ry="23.49559" rx="28.03845" id="svg_6" cy="147.25806" cx="192.30564" stroke-width="6" fill="#fff"/>
+  <line stroke="#000000" id="svg_8" y2="170.7903" x2="192.39682" y1="170.7903" x1="122.40107" stroke-width="6" fill="none"/>
+  <ellipse stroke="#000000" ry="36.96821" rx="46.6129" id="svg_10" cy="128.96067" cx="160.10264" stroke-width="6" fill="#fff"/>
+  <rect stroke="#000000" id="svg_13" height="26.00721" width="69.67424" y="141.89475" x="123.17357" stroke-width="0" fill="#ffffff"/>
+  <ellipse stroke="#000000" ry="14.46876" rx="19.19055" id="svg_15" cy="146.53076" cx="122.15354" stroke-width="0" fill="#fff"/>
+  <ellipse stroke="#000000" ry="17.44608" rx="24.09976" id="svg_16" cy="143.44896" cx="191.32876" stroke-width="0" fill="#fff"/>
+  <line filter="url(#svg_24_blur)" stroke="#000000" id="svg_21" y2="200.1894" x2="105.75359" y1="176.27622" x1="124.20704" stroke-width="6" fill="none"/>
+  <line filter="url(#svg_24_blur)" stroke="#000000" id="svg_22" y2="200.1894" x2="129.86195" y1="176.27622" x1="148.31541" stroke-width="6" fill="none"/>
+  <line filter="url(#svg_24_blur)" stroke="#000000" id="svg_23" y2="200.18941" x2="153.91117" y1="176.27623" x1="172.36463" stroke-width="6" fill="none"/>
+  <line stroke="#000000" id="svg_24" y2="200.1894" x2="178.09231" y1="176.27623" x1="196.54576" stroke-width="6" fill="none"/>
+  <line stroke="#000000" id="svg_27" y2="148.80484" x2="72.67284" y1="168.44645" x1="56.73134" stroke-width="6" fill="none"/>
+  <line stroke="#000000" id="svg_28" y2="63.93632" x2="137.69718" y1="84.31423" x1="121.94155" stroke-width="6" fill="none"/>
+  <line transform="rotate(135 91.0316 67.7826)" stroke="#000000" id="svg_29" y2="58.18429" x2="98.36436" y1="77.38086" x1="83.69894" stroke-width="6" fill="none"/>
+  <line transform="rotate(90 55.7871 86.4236)" stroke="#000000" id="svg_30" y2="76.32573" x2="63.7579" y1="96.52137" x1="47.8164" stroke-width="6" fill="none"/>
+  <line transform="rotate(45 48.0434 124.481)" stroke="#000000" id="svg_32" y2="114.58924" x2="55.66997" y1="134.37343" x1="40.41692" stroke-width="6" fill="none"/>
+  <path id="svg_37" d="m-146.80005,-23.59998" opacity="NaN" stroke-opacity="0" stroke-width="8" stroke="#b25959" fill="#000"/>
+ </g>
+</svg>
