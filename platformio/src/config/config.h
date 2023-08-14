@@ -22,7 +22,7 @@
 
 // --------------------------------------------------------------------------
 // --- Main Config ---
-#define USE_MQTT                        true
+#define USE_MQTT                        false
 #define USE_CAPTIVE_PORTAL              true
 
 // --------------------------------------------------------------------------
@@ -33,15 +33,6 @@
 #define LOG_INFO                        true
 #define LOG_DEBUG                       true
 #define LOG_SERIAL_BAUDRATE             115200
-
-// --------------------------------------------------------------------------
-// --- Battery ---
-#define BATTERY_PIN_ADC                 35
-#define PREFS_WAS_BATTERY_LOW           "b1"
-#define BATTERY_READ_COUNT              10
-#define BATTERY_VOLTAGE_LOW             3.0
-#define BATTERY_VMIN                    3.4
-#define BATTERY_VMAX                    4.2
 
 // --------------------------------------------------------------------------
 // --- E-Paper ---
